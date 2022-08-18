@@ -108,6 +108,10 @@
     margin: 0 7px;
   }
   /* ------------  */
+
+    .login-center {
+    padding: 20px 0;
+  }
 }
 @media (max-width: 400px) {
    /* -----subscribe -------  */
