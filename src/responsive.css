@@ -24,6 +24,9 @@
   .single-image img {
     height: 400px;
   }
+  .single-product {
+    margin-top: 20px;
+  }
 
 }
 @media (max-width: 768px) {

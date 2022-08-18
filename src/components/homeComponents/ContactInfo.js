@@ -18,8 +18,8 @@ const ContactInfo = () => {
             <div className="info-image">
               <i className="fas fa-map-marker-alt"></i>
             </div>
-            <h5>Henegama</h5>
-            <p>369 parakadamulla,henegama</p>
+            <h5>Harshana</h5>
+            <p>369 Parakadamulla Henegama</p>
           </div>
         </div>
         <div className="col-12 col-md-4 contact-Box">
