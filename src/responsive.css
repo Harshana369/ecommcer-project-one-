@@ -20,6 +20,11 @@
   .input-group {
     height: 30px;
   }
+   .single-image,
+  .single-image img {
+    height: 400px;
+  }
+
 }
 @media (max-width: 768px) {
   .pc-header {
@@ -46,7 +51,7 @@
     width: 30%;
   }
 
-  /* ------------  */
+  /* ----subscribe--------  */
 
   .subscribe-head .form-section input[type="email"] {
     height: 45px;
@@ -59,15 +64,25 @@
   .subscribe-head h2 {
     font-size: 25px;
   }
-  /* ------------  */
+  /* ----contact--------  */
   .contact-Box {
     margin: 30px 0;
   }
   .contactInfo {
     padding: 20px 0;
   }
+/* -----single page products--- */
+
+  .single-image {
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
+  .product-name {
+    font-size: 23px;
+  }
 }
 @media (max-width: 575.98px) {
+  /* -----subscribe-------  */
   .subscribe-head .form-section input[type="email"] {
     width: 100%;
   }
@@ -84,17 +99,21 @@
     padding: 70px 0 70px;
   }
 
-  /* ------------  */
-  .card-name {
+  /* -----Footer-------  */
+    .card-name {
     width: 8%;
     margin: 0 7px;
   }
   /* ------------  */
 }
 @media (max-width: 400px) {
+   /* -----subscribe -------  */
   .subscribe-head h2 {
     font-size: 20px;
   }
-
-  /* ------------  */
+  /* ----single page img--------  */
+  .single-image,
+  .single-image img {
+    height: 200px;
+  }
 }

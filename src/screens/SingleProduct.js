@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "./../components/Header";
 import Rating from "../components/homeComponents/Rating";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Message from "../components/LoadingError/Error";
 import products from "../data/Products";
 
-const SingleProduct = ({ match }) => {
-  const product = products.find((p) => p._id === match.params.id);
+const SingleProduct = () => {
+  const { id } = useParams();
+  console.log(id);
+  const product = products.find((p) => p._id === id);
   return (
     <>
       <Header />

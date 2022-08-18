@@ -5,6 +5,7 @@ import Pagination from "./pagination";
 import products from "../../data/Products";
 
 const ShopSection = () => {
+  // console.log("harshana");
   return (
     <>
       <div className="container">
