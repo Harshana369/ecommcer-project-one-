@@ -94,6 +94,20 @@
   .order-detail {
     margin-top: 20px;
   }
+
+  /* ------------cart------------------ */
+
+  .cart-buttons {
+    margin: 40px 0;
+  }
+  .cart-buttons a button,
+  .cart-buttons .d-flex button {
+    width: 100%;
+  }
+  .total .sub,
+  .total .total-price {
+    font-size: 16px;
+  }
 }
 @media (max-width: 575.98px) {
   /* -----subscribe-------  */
