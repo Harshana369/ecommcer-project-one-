@@ -6,7 +6,7 @@ import {BrowserRouter, Routes, Route } from "react-router-dom";
 import SingleProduct from "./screens/SingleProduct";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
-
+import ProfileScreen from './screens/ProfileScreen'
 const App = () => {
   return (
     <BrowserRouter>
@@ -15,6 +15,7 @@ const App = () => {
         <Route path="/products/:id" element={<SingleProduct />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<ProfileScreen/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -20,14 +20,16 @@
   .input-group {
     height: 30px;
   }
-   .single-image,
+  .single-image,
   .single-image img {
     height: 400px;
   }
   .single-product {
     margin-top: 20px;
   }
-
+  .author-card-avatar img {
+    margin-top: -20%;
+  }
 }
 @media (max-width: 768px) {
   .pc-header {
@@ -74,7 +76,7 @@
   .contactInfo {
     padding: 20px 0;
   }
-/* -----single page products--- */
+  /* -----single page products--- */
 
   .single-image {
     margin-bottom: 50px;
@@ -82,6 +84,15 @@
   }
   .product-name {
     font-size: 23px;
+  }
+
+  /* ---------profile------------- */
+
+  .author-card-avatar {
+    display: none;
+  }
+  .order-detail {
+    margin-top: 20px;
   }
 }
 @media (max-width: 575.98px) {
@@ -103,18 +114,18 @@
   }
 
   /* -----Footer-------  */
-    .card-name {
+  .card-name {
     width: 8%;
     margin: 0 7px;
   }
   /* ------------  */
 
-    .login-center {
+  .login-center {
     padding: 20px 0;
   }
 }
 @media (max-width: 400px) {
-   /* -----subscribe -------  */
+  /* -----subscribe -------  */
   .subscribe-head h2 {
     font-size: 20px;
   }
