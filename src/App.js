@@ -8,7 +8,8 @@ import Login from "./screens/Login";
 import Register from "./screens/Register";
 import ProfileScreen from './screens/ProfileScreen';
 import CartScreen from "./screens/CartScreen";
-
+import ShippingScreen from "./screens/ShippingScreen";
+import PaymentScreen from "./screens/PaymentScreen"
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,6 +20,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<ProfileScreen />} />
         <Route path="/cart" element={<CartScreen />} />
+        <Route path="/shipping" element={<ShippingScreen />} />
+        <Route path="/payment" element={<PaymentScreen />} />
       </Routes>
     </BrowserRouter>
   );
