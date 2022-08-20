@@ -4,7 +4,9 @@ import Rating from "./Rating";
 import Pagination from "./pagination";
 import axios from "axios";
 
+
 const ShopSection = () => {
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

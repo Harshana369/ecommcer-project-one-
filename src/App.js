@@ -2,16 +2,16 @@ import React from "react";
 import "./App.css";
 import "./responsive.css";
 import HomeScreen from "./screens/HomeScreen";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SingleProduct from "./screens/SingleProduct";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
-import ProfileScreen from './screens/ProfileScreen';
+import ProfileScreen from "./screens/ProfileScreen";
 import CartScreen from "./screens/CartScreen";
 import ShippingScreen from "./screens/ShippingScreen";
-import PaymentScreen from "./screens/PaymentScreen"
-import PlaceOrderScreen from "./screens/PlaceOrderScreen"
-import OrderScreen from "./screens/OrderScreen"
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
 
 const App = () => {
