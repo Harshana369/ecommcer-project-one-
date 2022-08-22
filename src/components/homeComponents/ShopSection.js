@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Pagination from "./pagination";
 import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "../../Redux/Actions/PrductsAction";
+import { listProducts } from "../../Redux/Actions/ProductsAction";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
 
@@ -26,7 +26,6 @@ const ShopSection = () => {
               <div className="shopcontainer row">
                 {loading ? (
                   <div className="mb-3">
-                  
                     <Loading />
                   </div>
                 ) : error ? (

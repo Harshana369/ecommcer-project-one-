@@ -13,13 +13,18 @@ import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
+import ShopSection from "./components/homeComponents/ShopSection";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
-        <Route path="/products/:id" element={<SingleProduct />}></Route>
+
+        <Route path="/products">
+          <Route path=":id" element={<SingleProduct />} />
+        </Route>
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<ProfileScreen />} />
