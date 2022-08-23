@@ -28,6 +28,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<ProfileScreen />} />
 
+        <Route path="/cart" element={<CartScreen />} />
+
         <Route path="/cart">
           <Route path=":productId" element={<CartScreen />} />
         </Route>
