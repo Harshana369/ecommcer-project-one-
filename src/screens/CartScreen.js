@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./../components/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/Actions/cartActions";
 
 const CartScreen = () => {
   window.scrollTo(0, 0);
+  let location = useLocation();
+  let { productId } = useParams();
+  const dispatch = useDispatch();
+
+  const qty = location.search ? Number(location.search.split("=")[1]) : 1;
+
+  useEffect(() => {
+      if (productId) {
+        dispatch(addToCart(productId, qty));
+      }
+    },
+    [dispatch, productId, qty]
+  );
+
   return (
     <>
       <Header />

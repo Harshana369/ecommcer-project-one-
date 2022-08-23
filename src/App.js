@@ -13,7 +13,6 @@ import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
-import ShopSection from "./components/homeComponents/ShopSection";
 
 const App = () => {
   return (
@@ -22,13 +21,17 @@ const App = () => {
         <Route path="/" element={<HomeScreen />}></Route>
 
         <Route path="/products">
-          <Route path=":id" element={<SingleProduct />} />
+          <Route path=":productId" element={<SingleProduct />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<ProfileScreen />} />
-        <Route path="/cart" element={<CartScreen />} />
+
+        <Route path="/cart">
+          <Route path=":productId" element={<CartScreen />} />
+        </Route>
+
         <Route path="/shipping" element={<ShippingScreen />} />
         <Route path="/payment" element={<PaymentScreen />} />
         <Route path="/placeorder" element={<PlaceOrderScreen />} />
