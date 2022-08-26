@@ -9,7 +9,7 @@ const CartScreen = () => {
   let location = useLocation();
   let { productId } = useParams();
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
 
@@ -26,7 +26,7 @@ const CartScreen = () => {
   }, [dispatch, productId, qty]);
 
   const checkOutHandler = () => {
-    history.push("/login?redirect=shipping");
+    navigate("/login?redirect=shipping");
   };
 
   const removeFromCartHandle = (id) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./responsive.css";
+import "react-toastify/dist/ReactToastify.css";
 import HomeScreen from "./screens/HomeScreen";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SingleProduct from "./screens/SingleProduct";
@@ -34,11 +35,11 @@ const App = () => {
           <Route path=":productId" element={<CartScreen />} />
         </Route>
 
-        {/* <Route path="login" element={<Login/>}>
-          <Route path="/shipping" element={<ShippingScreen />} />
-        </Route> */}
 
-        <Route path="/shipping" element={<ShippingScreen />} />
+        <Route path="/login">
+          <Route path=":shipping" element={<ShippingScreen />} />
+        </Route>
+
         <Route path="/payment" element={<PaymentScreen />} />
         <Route path="/placeorder" element={<PlaceOrderScreen />} />
         <Route path="/order" element={<OrderScreen />} />
