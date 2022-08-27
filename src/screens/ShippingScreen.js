@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { saveShippingAddress } from "../Redux/Actions/cartActions";
 
+  
 const ShippingScreen = () => {
   window.scrollTo(0, 0);
   const navigate = useNavigate();
@@ -11,13 +12,14 @@ const ShippingScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
-  const inputRef = React.useRef(null);
+  const inputRef = React.useRef();
 
-  const [address, setAddress] = useState(shippingAddress.address || inputRef);
-  const [city, setCity] = useState(shippingAddress.city || inputRef);
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode || inputRef
+  const [address, setAddress] = useState(shippingAddress.address );
+  const [city, setCity] = useState(shippingAddress.city);
+  const [postalCode, setPostalCode] = useState(
+    shippingAddress.postalCode 
   );
-  const [country, setCountry] = useState(shippingAddress.country || inputRef);
+  const [country, setCountry] = useState(shippingAddress.country);
 
   const dispatch = useDispatch();
 

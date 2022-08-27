@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import Header from "./../components/Header";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removefromcart } from "../Redux/Actions/cartActions";
+import {
+  addToCart,
+  removefromcart,
+
+} from "../Redux/Actions/cartActions";
 
 const CartScreen = () => {
   window.scrollTo(0, 0);
