@@ -1,11 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import Message from "../components/LoadingError/Error";
+import { createOrder } from "../Redux/Actions/OrderActions";
+import { ORDER_CREATE_RESET } from "../Redux/Constants/OrderConstants";
 import Header from "./../components/Header";
 
 const PlaceOrderScreen = () => {
   window.scrollTo(0, 0);
+   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const userLogin = useSelector((state) => state.userLogin);
@@ -28,10 +32,28 @@ const PlaceOrderScreen = () => {
         Number(cart.taxPrice)
       ).toFixed(2);
 
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
 
+   useEffect(() => {
+     if (success) {
+       navigate(`/order/${order._id}`);
+       dispatch({ type: ORDER_CREATE_RESET });
+     }
+   }, [navigate, dispatch, success, order]);
 
   const placeOrderHandler = (e) => {
-    e.preventDefault();
+   dispatch(
+     createOrder({
+       orderItems: cart.cartItems,
+       shippingAddress: cart.shippingAddress,
+       paymentMethod: cart.paymentMethod,
+       itemsPrice: cart.itemsPrice,
+       shippingPrice: cart.shippingPrice,
+       taxPrice: cart.taxPrice,
+       totalPrice: cart.totalPrice,
+     })
+   );
   };
 
   return (
@@ -85,8 +107,8 @@ const PlaceOrderScreen = () => {
                   <strong>Deliver to</strong>
                 </h5>
                 <p>
-                  Address: {cart.shippingAddress.city},{" "}
-                  {cart.shippingAddress.address},{" "}
+                  Address: {cart.shippingAddress.city},
+                  {cart.shippingAddress.address},
                   {cart.shippingAddress.postalCode}
                 </p>
               </div>
@@ -158,7 +180,11 @@ const PlaceOrderScreen = () => {
                 PLACE ORDER
               </button>
             )}
-          
+            {error && (
+              <div className="my-3 col-12">
+                <Message variant="alert-danger">{error}</Message>
+              </div>
+            )}
           </div>
         </div>
       </div>

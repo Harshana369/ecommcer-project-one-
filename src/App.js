@@ -35,14 +35,13 @@ const App = () => {
           <Route path=":productId" element={<CartScreen />} />
         </Route>
 
-
         <Route path="/login">
           <Route path=":shipping" element={<ShippingScreen />} />
         </Route>
 
         <Route path="/payment" element={<PaymentScreen />} />
         <Route path="/placeorder" element={<PlaceOrderScreen />} />
-        <Route path="/order" element={<OrderScreen />} />
+        <Route path="/order/:id" element={<OrderScreen />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
