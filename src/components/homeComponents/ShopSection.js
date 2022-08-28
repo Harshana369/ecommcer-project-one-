@@ -1,11 +1,12 @@
+
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Pagination from "./pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../Redux/Actions/ProductsAction";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
+import { Link } from "react-router-dom";
 
 const ShopSection = () => {
   const dispatch = useDispatch();
