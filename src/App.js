@@ -3,7 +3,7 @@ import "./App.css";
 import "./responsive.css";
 import "react-toastify/dist/ReactToastify.css";
 import HomeScreen from "./screens/HomeScreen";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import SingleProduct from "./screens/SingleProduct";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
@@ -14,6 +14,7 @@ import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import NotFound from "./screens/NotFound";
+import { PrivateRoute } from "./PrivateRouter";
 
 const App = () => {
   return (
@@ -25,10 +26,8 @@ const App = () => {
           <Route path=":productId" element={<SingleProduct />} />
         </Route>
 
-
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<ProfileScreen />} />
 
         <Route path="/cart" element={<CartScreen />} />
 
@@ -37,12 +36,51 @@ const App = () => {
         </Route>
 
         <Route path="/login">
-          <Route path=":shipping" element={<ShippingScreen />} />
+          <Route
+            path=":shipping"
+            element={
+              <PrivateRoute>
+                <ShippingScreen />
+              </PrivateRoute>
+            }
+          />
         </Route>
 
-        <Route path="/payment" element={<PaymentScreen />} />
-        <Route path="/placeorder" element={<PlaceOrderScreen />} />
-        <Route path="/order/:id" element={<OrderScreen />} />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <ProfileScreen />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/payment"
+          element={
+            <PrivateRoute>
+              <PaymentScreen />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/placeorder"
+          element={
+            <PrivateRoute>
+              <PlaceOrderScreen />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/order/:id"
+          element={
+            <PrivateRoute>
+              <OrderScreen />
+            </PrivateRoute>
+          }
+        />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
