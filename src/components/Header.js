@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../Redux/Actions/userActions";
 
 const Header = () => {
+  const [keyword, setKeyword] = useState();
   const dispatch = useDispatch();
+
+  
+
+  const history = useNavigate();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -14,6 +19,15 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      history(`/search/${keyword}`);
+    } else {
+      history("/");
+    }
   };
 
   return (
@@ -113,11 +127,12 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="col-12 d-flex align-items-center">
-                  <form className="input-group">
+                  <form onSubmit={submitHandler} className="input-group">
                     <input
                       type="search"
                       className="form-control rounded search"
                       placeholder="Search"
+                      onChange={(e) => setKeyword(e.target.value)}
                     />
                     <button type="submit" className="search-button">
                       search
@@ -137,11 +152,12 @@ const Header = () => {
                 </Link>
               </div>
               <div className="col-md-6 col-8 d-flex align-items-center">
-                <form className="input-group">
+                <form onSubmit={submitHandler} className="input-group">
                   <input
                     type="search"
                     className="form-control rounded search"
                     placeholder="Search"
+                    onChange={(e) => setKeyword(e.target.value)}
                   />
                   <button type="submit" className="search-button">
                     search

@@ -22,6 +22,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
 
+        <Route path="/search/:keyword" element={<HomeScreen/>}></Route>
+        
         <Route path="/products">
           <Route path=":productId" element={<SingleProduct />} />
         </Route>
