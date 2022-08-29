@@ -11,11 +11,12 @@ const HomeScreen = () => {
 
      let params = useParams();
      const keyword = params.keyword;
+     const pagenumber = params.pagenumber;
   
   return (
     <div>
       <Header />
-      <ShopSection keyword={keyword}/>
+      <ShopSection keyword={keyword} pagenumber={pagenumber} />
       <CalltoActionSection />
       <ContactInfo />
       <Footer />
